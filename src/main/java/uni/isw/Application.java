@@ -10,16 +10,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class Application {
 
     public static void main(String[] args) {
-            SpringApplication.run(Application.class, args);
+        SpringApplication.run(Application.class, args);
     }
+
     @Bean
-    public WebMvcConfigurer corsConfigurer(){
-        return new WebMvcConfigurer(){
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
             @Override
-            public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping("/**").allowedMethods("GET","POST","DELETE");
-            }            
-        };        
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedMethods("GET", "POST", "DELETE") ;
+            }
+        };
     }
 
 }
