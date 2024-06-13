@@ -12,10 +12,10 @@ RUN mvn clean install -DskipTests
 FROM openjdk:17-slim
 
 # Copia el artefacto construido desde el contenedor de construcción al contenedor de ejecución
-COPY --from=builder /app/target/241CC341SpringSotorBackend-0.0.1-SNAPSHOT.jar /app/241CC341SpringSotorBackend.jar
+COPY --from=builder /app/target/241CC341SpringSotorBackend-master-0.0.1-SNAPSHOT.jar /app/241CC341SpringSotorBackend-master.jar
 
 # Puerto en el que la aplicación Spring Boot escuchará las solicitudes
 EXPOSE 8080
 
 # Comando para ejecutar la aplicación al iniciar el contenedor
-CMD ["java", "-jar", "/app/241CC341SpringSotorBackend.jar"]
+CMD ["java", "-jar", "/app/241CC341SpringSotorBackend-master.jar"]
